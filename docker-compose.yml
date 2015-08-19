@@ -1,7 +1,5 @@
 web:
   build: node-hello
-  expose:
-    - 3000
 
 haproxy:
   image: eeacms/haproxy
