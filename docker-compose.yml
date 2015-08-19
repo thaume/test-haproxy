@@ -1,5 +1,5 @@
 web:
-  image: node-hello
+  build: node-hello
   expose:
     - 80
 
