@@ -4,9 +4,15 @@ web:
     - 3000
 
 haproxy:
-  image: eeacms/haproxy
+  image: million12/haproxy
+  volumes:
+    - "./haproxy:/etc/haproxy/"
   links:
     - web
   ports:
     - "80:80"
-    - "1936:1936"
+    - "70:70"
+  expose:
+    - "80"
+    - "70"
+
