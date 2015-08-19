@@ -1,5 +1,9 @@
 web:
   image: node-hello
+  links:
+    - db
+  environment:
+    - DATABASE_URL=postgres://db:5432
 
 haproxy:
   image: eeacms/haproxy
@@ -8,3 +12,12 @@ haproxy:
   ports:
     - "80:80"
     - "1936:1936"
+
+db:
+  image: postgres
+  ports:
+    - "5432"
+  volumes:
+    - /etc/postgresql
+    - /var/log/postgresql
+    - /var/lib/postgresql
