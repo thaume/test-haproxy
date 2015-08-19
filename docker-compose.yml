@@ -1,22 +1,17 @@
-web-http:
-  build: node-hello
+web:
+  image: node-hello
   expose:
-    - 3000
-
-web-ws:
-  build: node-ws
-  expose:
-    - 3000
+    - 80
 
 haproxy:
-  image: tutum/haproxy
+  image: million12/haproxy
+  volumes:
+    - "./haproxy:/etc/haproxy/"
   links:
-    - web-http
-    - web-ws
+    - web
   ports:
     - "80:80"
-    - "1936:1936"
-  environment:
-    - BACKEND_PORT=3000
-    - STATS_PORT=1936
-    - STATS_AUTH=stats:stats
+    - "70:70"
+  expose:
+    - "80"
+    - "70"

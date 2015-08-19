@@ -10,5 +10,5 @@ app.get('/', function (req, res) {
   res.send('<html><body>Hello from Node.js containers ' + hostname + '</body></html>');
 });
 
-app.listen(3000);
+app.listen(80);
 console.log('Running on http://localhost:3000');
