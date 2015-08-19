@@ -7,7 +7,7 @@ var app = express();
 var hostname = os.hostname();
 
 app.get('/', function (req, res) {
-  res.send('<html><body>Hello from Node.js container updated twice ' + hostname + '</body></html>');
+  res.send('<html><body>Hello from Node.js container ' + hostname + ', I think I now understand how updates work</body></html>');
 });
 
 app.listen(80);
