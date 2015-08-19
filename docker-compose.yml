@@ -1,5 +1,5 @@
 web:
-  build: node-hello
+  image: node-hello
 
 haproxy:
   image: eeacms/haproxy
