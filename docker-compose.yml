@@ -1,0 +1,22 @@
+web-http:
+  build: node-hello
+  expose:
+    - 3000
+
+web-ws:
+  build: node-ws
+  expose:
+    - 3000
+
+haproxy:
+  image: tutum/haproxy
+  links:
+    - web-http
+    - web-ws
+  ports:
+    - "80:80"
+    - "1936:1936"
+  environment:
+    - BACKEND_PORT=3000
+    - STATS_PORT=1936
+    - STATS_AUTH=stats:stats
