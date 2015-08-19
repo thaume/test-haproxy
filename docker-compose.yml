@@ -3,6 +3,8 @@ web:
 
 haproxy:
   image: eeacms/haproxy
+  volumes:
+    - "./haproxy:/etc/haproxy/"
   links:
     - web
   ports:
