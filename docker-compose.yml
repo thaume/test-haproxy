@@ -1,7 +1,7 @@
 web:
   build: node-hello
   expose:
-    - 80
+    - 3000
 
 haproxy:
   image: million12/haproxy
