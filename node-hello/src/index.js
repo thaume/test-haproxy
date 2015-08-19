@@ -7,8 +7,8 @@ var app = express();
 var hostname = os.hostname();
 
 app.get('/', function (req, res) {
-  res.send('<html><body>Hello from Node.js containers ' + hostname + '</body></html>');
+  res.send('<html><body>Hello from Node.js container updated ' + hostname + '</body></html>');
 });
 
 app.listen(80);
-console.log('Running on http://localhost:80 yozkdqzk');
+console.log('Running on http://localhost:80');
